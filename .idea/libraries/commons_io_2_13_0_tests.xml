@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="commons-io-2.13.0-tests">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/commons-io-2.13.0/commons-io-2.13.0-tests.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

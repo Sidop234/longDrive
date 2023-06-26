@@ -1,0 +1,10 @@
+.tab *.tab-label {
+    -fx-rotate: 90;
+    -fx-pref-width: 65;
+    -fx-font-size:10px;
+}
+
+.tab {
+    -fx-padding: 2em 0.2em 2em 0.2em;
+    tab-fx-border-color:'black';
+}

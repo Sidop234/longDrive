@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="685.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User.controller.ProfileScreenController">
+   <top>
+      <HBox alignment="CENTER_LEFT" prefHeight="43.0" prefWidth="685.0" style="-fx-border-color: black;" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="17.0" prefWidth="19.0" />
+            <Label fx:id="introLabel" nodeOrientation="LEFT_TO_RIGHT" prefHeight="45.0" prefWidth="544.0" text="Bloba for Akshat Singh" />
+            <Button fx:id="refresh" mnemonicParsing="false" onAction="#refreshButtonResponse" prefHeight="25.0" prefWidth="105.0" text="Refresh" />
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TabPane prefHeight="523.0" prefWidth="511.0" side="LEFT" style="-fx-border-color: black;" stylesheets="@../css/tab.css" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="txt">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="493.0" prefWidth="584.0">
+                           <children>
+                              <ScrollPane prefHeight="521.0" prefWidth="434.0">
+                                 <content>
+                                    <FlowPane fx:id="txtFlowPane" maxHeight="521.0" maxWidth="434.0" prefHeight="200.0" prefWidth="200.0" />
+                                 </content>
+                              </ScrollPane>
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="image">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ScrollPane prefHeight="521.0" prefWidth="434.0">
+                                 <content>
+                                    <FlowPane fx:id="imgFlowPane" maxHeight="521.0" maxWidth="434.0" prefHeight="200.0" prefWidth="200.0" />
+                                 </content>
+                              </ScrollPane>
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="pdf">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ScrollPane prefHeight="521.0" prefWidth="434.0">
+                                 <content>
+                                    <FlowPane fx:id="pdfFlowPane" maxHeight="521.0" maxWidth="434.0" prefHeight="200.0" prefWidth="200.0" />
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="logout">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="82.0" layoutY="201.0" text="Are you sure you want to log out?">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="logout" layoutX="191.0" layoutY="272.0" mnemonicParsing="false" text="Log out" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+            <Accordion layoutX="511.0" prefHeight="523.0" prefWidth="175.0">
+              <panes>
+                <TitledPane animated="false" text="upload">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="upload" layoutX="61.0" layoutY="223.0" mnemonicParsing="false" onAction="#uploadFile" text="upload" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </TitledPane>
+                <TitledPane animated="false" text="action">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label fx:id="filename" alignment="CENTER" layoutX="23.0" layoutY="90.0" prefHeight="27.0" prefWidth="127.0" textFill="#e64162">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="download" layoutX="51.0" layoutY="125.0" mnemonicParsing="false" onAction="#downloadFile" text="download" />
+                              <Button fx:id="delete" layoutX="61.0" layoutY="158.0" mnemonicParsing="false" onAction="#deleteFile" text="delete" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </TitledPane>
+              </panes>
+            </Accordion>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

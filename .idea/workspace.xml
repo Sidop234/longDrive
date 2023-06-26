@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3fe91daa-0623-45e4-86ee-b15d1c5c2e7f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/commons_io_2_13_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/commons_io_2_13_0_javadoc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/commons_io_2_13_0_sources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/commons_io_2_13_0_test_sources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/commons_io_2_13_0_tests.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_30.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/entity/FileWrapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/entity/Files.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/main/RequestIdentifier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/main/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/requestHandler/DeleteRequestHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/requestHandler/DownloadRequestHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/requestHandler/FileRequestHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/requestHandler/LogOutRequestHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/requestHandler/LoginRequestHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/requestHandler/RegisterRequestHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/requestHandler/RequestHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/requestHandler/UploadRequestHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/response/DeleteResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/response/DownloadResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/response/FileResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/response/LogOutResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/response/LoginResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/response/RegisterResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/response/Response.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/response/UploadResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/table/FileTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/table/UserTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/util/RandomString.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/controller/CardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/controller/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/controller/ProfileScreenController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/controller/RegisterController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/css/tab.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/entity/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/fxml/Login.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/fxml/ProfileScreen.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/fxml/Register.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/fxml/imageCard.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/request/DeleteRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/request/DownloadRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/request/FileRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/request/LogOutRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/request/LoginRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/request/RegisterRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/request/Request.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/request/UploadRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/resource/pdf.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/util/ExtensionUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/util/GuiUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/util/HashUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/longDrive.iml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2ReyD9EBmkjK8hbft0LIX2YNdf9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/Akshat/IdeaProjects/longDrive/User/resource",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.38965517"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Akshat\IdeaProjects\longDrive\User\resource" />
+      <recent name="C:\Users\Akshat\IdeaProjects\longDrive\Server\response" />
+      <recent name="C:\Users\Akshat\IdeaProjects\longDrive\User\request" />
+      <recent name="C:\Users\Akshat\IdeaProjects\longDrive\Server\requestHandler" />
+      <recent name="C:\Users\Akshat\IdeaProjects\longDrive\Server\main" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Akshat\IdeaProjects\longDrive\User\fxml" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Server.requestHandler" />
+      <recent name="Server.response" />
+      <recent name="User.request" />
+      <recent name="User.util" />
+      <recent name="Server.util" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="User.entity.Main" />
+      <module name="longDrive" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Akshat\Documents\javafx-sdk-19\lib&quot; --add-modules=javafx.controls,javafx.graphics,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3fe91daa-0623-45e4-86ee-b15d1c5c2e7f" name="Changes" comment="" />
+      <created>1687624720747</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1687624720747</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
