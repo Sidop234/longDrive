@@ -79,7 +79,7 @@ public class ProfileScreenController implements Initializable{
     public void first(String name){
         Main.profileScreenController = this;
         this.name = name;
-        introLabel.setText("Bloba for "+name);
+        introLabel.setText("longdrive for "+name);
         System.out.println("Inside the first method.");
         refreshButtonResponse();
     }
