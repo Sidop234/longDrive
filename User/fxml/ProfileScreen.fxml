@@ -34,7 +34,7 @@
                            <children>
                               <ScrollPane prefHeight="521.0" prefWidth="434.0">
                                  <content>
-                                    <FlowPane fx:id="txtFlowPane" maxHeight="521.0" maxWidth="434.0" prefHeight="200.0" prefWidth="200.0" />
+                                    <FlowPane fx:id="txtFlowPane" maxWidth="434.0" prefHeight="200.0" prefWidth="200.0" />
                                  </content>
                               </ScrollPane>
                            </children></AnchorPane>
@@ -46,7 +46,7 @@
                            <children>
                               <ScrollPane prefHeight="521.0" prefWidth="434.0">
                                  <content>
-                                    <FlowPane fx:id="imgFlowPane" maxHeight="521.0" maxWidth="434.0" prefHeight="200.0" prefWidth="200.0" />
+                                    <FlowPane fx:id="imgFlowPane" maxWidth="434.0" prefHeight="200.0" prefWidth="200.0" />
                                  </content>
                               </ScrollPane>
                            </children></AnchorPane>
@@ -58,7 +58,7 @@
                            <children>
                               <ScrollPane prefHeight="521.0" prefWidth="434.0">
                                  <content>
-                                    <FlowPane fx:id="pdfFlowPane" maxHeight="521.0" maxWidth="434.0" prefHeight="200.0" prefWidth="200.0" />
+                                    <FlowPane fx:id="pdfFlowPane" maxWidth="434.0" prefHeight="200.0" prefWidth="200.0" />
                                  </content>
                               </ScrollPane>
                            </children>
