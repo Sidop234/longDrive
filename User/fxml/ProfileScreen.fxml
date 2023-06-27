@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
@@ -11,6 +13,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="685.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User.controller.ProfileScreenController">
@@ -65,6 +68,56 @@
                         </AnchorPane>
                     </content>
                   </Tab>
+                  <Tab text="Password">
+                  <content>
+                      <AnchorPane>
+                          <children>
+                              <VBox alignment="TOP_CENTER" fillWidth="false" prefHeight="200.0" prefWidth="100.0" spacing="30.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                  <children>
+                                      <Label text="Enter your password:   ">
+                                          <font>
+                                              <Font size="25.0" />
+                                          </font>
+                                      </Label>
+                                      <PasswordField fx:id="oldPasswordTextField" prefHeight="44.0" prefWidth="359.0" promptText="Current password here">
+                                          <font>
+                                              <Font size="20.0" />
+                                          </font>
+                                      </PasswordField>
+                                      <Label text="Enter the new password:   ">
+                                          <font>
+                                              <Font size="25.0" />
+                                          </font>
+                                      </Label>
+                                      <PasswordField fx:id="newPasswordTextField" prefHeight="44.0" prefWidth="359.0" promptText="New password here">
+                                          <font>
+                                              <Font size="20.0" />
+                                          </font>
+                                      </PasswordField>
+                                      <Label text="Confirm new password:">
+                                          <font>
+                                              <Font size="25.0" />
+                                          </font>
+                                      </Label>
+                                      <PasswordField fx:id="confirmNewPasswordTextField" prefHeight="44.0" prefWidth="359.0" promptText="Type new password again">
+                                          <font>
+                                              <Font size="20.0" />
+                                          </font>
+                                      </PasswordField>
+                                      <Button fx:id="changePasswordButton" mnemonicParsing="false" onAction="#changePasswordButtonResponse" text="Change password">
+                                          <font>
+                                              <Font size="20.0" />
+                                          </font>
+                                      </Button>
+                                  </children>
+                                  <padding>
+                                      <Insets left="20.0" right="20.0" top="40.0" />
+                                  </padding>
+                              </VBox>
+                          </children>
+                      </AnchorPane>
+                  </content>
+              </Tab>
                   <Tab text="logout">
                     <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
