@@ -30,9 +30,9 @@ public class CardController implements Initializable {
     public void first(){
         if(fileWrapper !=null) {
             this.filename.setText(fileWrapper.getFilename());
-            if(fileWrapper.getFiletype()=="txt"){
+            if(fileWrapper.getFiletype().equals("txt")){
                 this.icon.setImage(new Image("User/resource/txt.png"));
-            }else if(fileWrapper.getFiletype()=="pdf"){
+            }else if(fileWrapper.getFiletype().equals("pdf")){
                 this.icon.setImage(new Image("User/resource/pdf.jpg"));
             }else{
                 this.icon.setImage(new Image("User/resource/img.jpg"));

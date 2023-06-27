@@ -1,7 +1,6 @@
 package Server.requestHandler;
 
 import Server.entity.FileWrapper;
-import Server.entity.Files;
 import Server.response.FileResponse;
 import Server.table.FileTable;
 
