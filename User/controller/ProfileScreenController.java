@@ -41,6 +41,8 @@ public class ProfileScreenController implements Initializable{
     @FXML
     Button download;
     @FXML
+    Button display;
+    @FXML
     FlowPane txtFlowPane;
     @FXML
     FlowPane imgFlowPane;
@@ -201,6 +203,7 @@ public class ProfileScreenController implements Initializable{
                 JOptionPane.showMessageDialog(null,"Couldn't delete!");
             }
         }
+        filename.setText("");
         getFile();
     }
 }
