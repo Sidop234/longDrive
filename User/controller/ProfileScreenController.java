@@ -106,9 +106,9 @@ public class ProfileScreenController implements Initializable{
                     CardController controller = fxmlLoader.getController();
                     controller.profileScreenController = this;
                     controller.fileWrapper = fileWrapper;
-                    if(fileWrapper.getFiletype()=="txt"){
+                    if(fileWrapper.getFiletype().equals("txt")){
                         txtFlowPane.getChildren().add(node);
-                    }else if(fileWrapper.getFiletype()=="pdf"){
+                    }else if(fileWrapper.getFiletype().equals("pdf")){
                         pdfFlowPane.getChildren().add(node);
                     }else{
                         imgFlowPane.getChildren().add(node);
@@ -152,6 +152,7 @@ public class ProfileScreenController implements Initializable{
         else {
             JOptionPane.showMessageDialog(null,"Couldn't upload!");
         }
+        getFile();
     }
     public void downloadFile() throws IOException {
         if(filename.getText().isEmpty()){
@@ -188,6 +189,7 @@ public class ProfileScreenController implements Initializable{
         }
         else {
             DeleteRequest deleteRequest = new DeleteRequest(filename.getText());
+            Main.sendRequest(deleteRequest);
             System.out.println("Delete request sent!");
             DeleteResponse deleteResponse = (DeleteResponse)Main.getResponse();
             System.out.println("Delete response "+deleteResponse);
@@ -199,5 +201,6 @@ public class ProfileScreenController implements Initializable{
                 JOptionPane.showMessageDialog(null,"Couldn't delete!");
             }
         }
+        getFile();
     }
 }
