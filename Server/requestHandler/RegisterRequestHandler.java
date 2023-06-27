@@ -23,8 +23,8 @@ public class RegisterRequestHandler extends RequestHandler{
     public void sendResponse(String userID) {
         PreparedStatement preparedStatement;
         System.out.println("Registration process invoked !");
-        File file=new File("Server/images/sample.png");
-        FileInputStream fis;
+//        File file=new File("Server/Image/userdefault.png");
+//        FileInputStream fis;
         int result = 0;
         try {
             preparedStatement=connection.prepareStatement(UserTable.QUERY_REGISTER);
@@ -33,11 +33,11 @@ public class RegisterRequestHandler extends RequestHandler{
             preparedStatement.setString(3,registerRequest.getLastName());
             preparedStatement.setString(4,registerRequest.getEmailID());
             preparedStatement.setString(5,registerRequest.getPassword());
-            fis=new FileInputStream(file);
-            preparedStatement.setBinaryStream(6,fis);
+//            fis=new FileInputStream(file);
+//            preparedStatement.setBinaryStream(6,fis);
             System.out.println(preparedStatement);
             result=preparedStatement.executeUpdate();
-        } catch (SQLException | FileNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         if(result==0) {
