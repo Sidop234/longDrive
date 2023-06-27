@@ -82,6 +82,7 @@ public class Server {
      */
     public static void sendResponse(ObjectOutputStream outputStream, Response response){
         try {
+
             outputStream.writeObject(response);
             outputStream.flush();
         } catch (IOException e) {
