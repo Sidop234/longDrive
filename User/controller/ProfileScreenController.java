@@ -133,9 +133,9 @@ public class ProfileScreenController implements Initializable{
         String extension = ExtensionUtil.getExtension(selectedFile);
         String filename = selectedFile.getName();
         String filetype;
-        if(extension=="txt"){
+        if(extension.equals("txt")){
             filetype="txt";
-        }else if(extension == "pdf"){
+        }else if(extension.equals("pdf")){
             filetype = "pdf";
         }else{
             filetype = "image";
