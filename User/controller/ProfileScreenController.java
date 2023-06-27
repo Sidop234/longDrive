@@ -204,6 +204,7 @@ public class ProfileScreenController implements Initializable{
                 JOptionPane.showMessageDialog(null,"Couldn't delete!");
             }
         }
+        filename.setText("");
         getFile();
     }
 
