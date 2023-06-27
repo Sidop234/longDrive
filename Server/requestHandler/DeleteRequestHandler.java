@@ -23,7 +23,7 @@ public class DeleteRequestHandler extends  RequestHandler{
     public void sendResponse(String userID) {
         int result = 0;
         try {
-            PreparedStatement preparedStatement=connection.prepareStatement(FileTable.QUERY_INSERT_FILE);
+            PreparedStatement preparedStatement=connection.prepareStatement(FileTable.QUERY_DELETE_FILE);
             preparedStatement.setInt(1,Integer.parseInt(userID));
             preparedStatement.setString(2,deleteRequest.getFilename());
             result=preparedStatement.executeUpdate();
