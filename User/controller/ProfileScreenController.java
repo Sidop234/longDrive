@@ -208,7 +208,7 @@ public class ProfileScreenController implements Initializable{
         filename.setText("");
         getFile();
     }
-    public void viewFile() throws IOException {
+    public void viewFile() {
         if(filename.getText().isEmpty()){
             GuiUtil.alert(Alert.AlertType.ERROR, "No selected file!");
         }
