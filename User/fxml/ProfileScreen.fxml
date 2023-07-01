@@ -103,6 +103,7 @@
                               </Label>
                               <Button fx:id="download" layoutX="51.0" layoutY="125.0" mnemonicParsing="false" onAction="#downloadFile" text="download" />
                               <Button fx:id="delete" layoutX="61.0" layoutY="158.0" mnemonicParsing="false" onAction="#deleteFile" text="delete" />
+                               <Button fx:id="view" layoutX="66.0" layoutY="191.0" mnemonicParsing="false" onAction="#viewFile" text="view" />
                            </children>
                         </AnchorPane>
                   </content>

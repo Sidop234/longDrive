@@ -20,6 +20,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import javax.swing.*;
+import java.awt.*;
 import java.io.*;
 import java.net.URL;
 import java.util.ArrayList;
@@ -40,8 +41,6 @@ public class ProfileScreenController implements Initializable{
     Button upload;
     @FXML
     Button download;
-    @FXML
-    Button display;
     @FXML
     FlowPane txtFlowPane;
     @FXML
@@ -205,5 +204,66 @@ public class ProfileScreenController implements Initializable{
         }
         filename.setText("");
         getFile();
+    }
+    public void viewFile() throws IOException {
+        if(filename.getText().isEmpty()){
+            GuiUtil.alert(Alert.AlertType.ERROR, "No selected file!");
+        }
+        else{
+            byte[] fileArray;
+            DownloadRequest downloadRequest = new DownloadRequest(filename.getText());
+            Main.sendRequest(downloadRequest);
+            System.out.println("View request sent!");
+            DownloadResponse downloadResponse = (DownloadResponse) Main.getResponse();
+            System.out.println("View response "+downloadResponse);
+            assert downloadResponse != null;
+            fileArray = downloadResponse.getFiles().getFileArray();
+            if(downloadResponse.getFiles().getFiletype().equals("txt")){
+                File outputFile1 = new File("Server/filepath/file.txt");
+                try (FileOutputStream fos1 = new FileOutputStream(outputFile1)) {
+                    fos1.write(fileArray);
+                    System.out.println("Bytecode successfully written to file.");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                try {
+                    Desktop.getDesktop().open(outputFile1);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }else if(downloadResponse.getFiles().getFiletype().equals("pdf")){
+                File outputFile2 = new File("Server/filepath/file.pdf");
+                try (FileOutputStream fos2 = new FileOutputStream(outputFile2)) {
+                    fos2.write(fileArray);
+                    System.out.println("Bytecode successfully written to file.");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                try {
+                    Desktop.getDesktop().open(outputFile2);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+            }else{
+                File outputFile3 = new File("Server/filepath/file.png");
+                try (FileOutputStream fos3 = new FileOutputStream(outputFile3)) {
+                    fos3.write(fileArray);
+                    System.out.println("Bytecode successfully written to file.");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                try {
+                    Desktop.getDesktop().open(outputFile3);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+
+        }
     }
 }
