@@ -222,7 +222,7 @@ public class ProfileScreenController implements Initializable{
                 File outputFile1 = new File("Server/filepath/file.txt");
                 try (FileOutputStream fos1 = new FileOutputStream(outputFile1)) {
                     fos1.write(fileArray);
-                    System.out.println("Bytecode successfully written to file.");
+                    System.out.println("Bytecode successfully written to  file.");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
