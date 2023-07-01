@@ -222,45 +222,45 @@ public class ProfileScreenController implements Initializable{
             assert downloadResponse != null;
             fileArray = downloadResponse.getFiles().getFileArray();
             if(downloadResponse.getFiles().getFiletype().equals("txt")){
-                File outputFile1 = new File("Server/filepath/file.txt");
-                try (FileOutputStream fos1 = new FileOutputStream(outputFile1)) {
-                    fos1.write(fileArray);
+                File outputFile = new File("Server/filepath/file.txt");
+                try (FileOutputStream fos = new FileOutputStream(outputFile)) {
+                    fos.write(fileArray);
                     System.out.println("Bytecode successfully written to  file.");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
 
                 try {
-                    Desktop.getDesktop().open(outputFile1);
+                    Desktop.getDesktop().open(outputFile);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }else if(downloadResponse.getFiles().getFiletype().equals("pdf")){
-                File outputFile2 = new File("Server/filepath/file.pdf");
-                try (FileOutputStream fos2 = new FileOutputStream(outputFile2)) {
-                    fos2.write(fileArray);
+                File outputFile = new File("Server/filepath/file.pdf");
+                try (FileOutputStream fos = new FileOutputStream(outputFile)) {
+                    fos.write(fileArray);
                     System.out.println("Bytecode successfully written to file.");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
 
                 try {
-                    Desktop.getDesktop().open(outputFile2);
+                    Desktop.getDesktop().open(outputFile);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
 
             }else{
-                File outputFile3 = new File("Server/filepath/file.png");
-                try (FileOutputStream fos3 = new FileOutputStream(outputFile3)) {
-                    fos3.write(fileArray);
+                File outputFile = new File("Server/filepath/file.png");
+                try (FileOutputStream fos = new FileOutputStream(outputFile)) {
+                    fos.write(fileArray);
                     System.out.println("Bytecode successfully written to file.");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
 
                 try {
-                    Desktop.getDesktop().open(outputFile3);
+                    Desktop.getDesktop().open(outputFile);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
