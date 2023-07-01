@@ -7,6 +7,8 @@ import User.entity.Main;
 import User.request.*;
 import User.util.ExtensionUtil;
 import User.util.GuiUtil;
+import User.util.HashUtil;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -15,11 +17,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import javax.swing.*;
+import java.awt.*;
 import java.io.*;
 import java.net.URL;
 import java.util.ArrayList;
@@ -204,4 +208,96 @@ public class ProfileScreenController implements Initializable{
         filename.setText("");
         getFile();
     }
+    public void viewFile() throws IOException {
+        if(filename.getText().isEmpty()){
+            GuiUtil.alert(Alert.AlertType.ERROR, "No selected file!");
+        }
+        else{
+            byte[] fileArray;
+            DownloadRequest downloadRequest = new DownloadRequest(filename.getText());
+            Main.sendRequest(downloadRequest);
+            System.out.println("View request sent!");
+            DownloadResponse downloadResponse = (DownloadResponse) Main.getResponse();
+            System.out.println("View response "+downloadResponse);
+            assert downloadResponse != null;
+            fileArray = downloadResponse.getFiles().getFileArray();
+            if(downloadResponse.getFiles().getFiletype().equals("txt")){
+                File outputFile1 = new File("Server/filepath/file.txt");
+                try (FileOutputStream fos1 = new FileOutputStream(outputFile1)) {
+                    fos1.write(fileArray);
+                    System.out.println("Bytecode successfully written to  file.");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                try {
+                    Desktop.getDesktop().open(outputFile1);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }else if(downloadResponse.getFiles().getFiletype().equals("pdf")){
+                File outputFile2 = new File("Server/filepath/file.pdf");
+                try (FileOutputStream fos2 = new FileOutputStream(outputFile2)) {
+                    fos2.write(fileArray);
+                    System.out.println("Bytecode successfully written to file.");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                try {
+                    Desktop.getDesktop().open(outputFile2);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+            }else{
+                File outputFile3 = new File("Server/filepath/file.png");
+                try (FileOutputStream fos3 = new FileOutputStream(outputFile3)) {
+                    fos3.write(fileArray);
+                    System.out.println("Bytecode successfully written to file.");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                try {
+                    Desktop.getDesktop().open(outputFile3);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+
+        }
+    }
+
+    @FXML
+    private PasswordField oldPasswordTextField;
+    @FXML
+    private PasswordField newPasswordTextField;
+    @FXML
+    private PasswordField confirmNewPasswordTextField;
+
+    public void changePasswordButtonResponse() {
+        String oldPassword = oldPasswordTextField.getText();
+        String newPassword = newPasswordTextField.getText();
+        String confirmedNewPassword = confirmNewPasswordTextField.getText();
+
+        if(newPassword.equals(confirmedNewPassword)) {
+            ChangePasswordRequest changePasswordRequest = new ChangePasswordRequest(HashUtil.getMd5(oldPassword),HashUtil.getMd5(newPassword));
+            System.out.println("change password request sent");
+            Main.sendRequest((Request) changePasswordRequest);
+            ChangePasswordResponse changePasswordResponse = (ChangePasswordResponse) Main.getResponse();
+            assert changePasswordResponse != null;
+            if(changePasswordResponse.getResponse().equals("Successful")) {
+                JOptionPane.showMessageDialog(null,"Password changed successfully!");
+            }
+            else {
+                JOptionPane.showMessageDialog(null,"Some error occurred.");
+            }
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"New password fields don't match.");
+        }
+    }
+
 }
