@@ -7,6 +7,8 @@ import User.entity.Main;
 import User.request.*;
 import User.util.ExtensionUtil;
 import User.util.GuiUtil;
+import User.util.HashUtil;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -15,6 +17,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -205,6 +208,7 @@ public class ProfileScreenController implements Initializable{
         filename.setText("");
         getFile();
     }
+<<<<<<< HEAD
     public void viewFile() throws IOException {
         if(filename.getText().isEmpty()){
             GuiUtil.alert(Alert.AlertType.ERROR, "No selected file!");
@@ -266,4 +270,37 @@ public class ProfileScreenController implements Initializable{
 
         }
     }
+=======
+
+    @FXML
+    private PasswordField oldPasswordTextField;
+    @FXML
+    private PasswordField newPasswordTextField;
+    @FXML
+    private PasswordField confirmNewPasswordTextField;
+
+    public void changePasswordButtonResponse() {
+        String oldPassword = oldPasswordTextField.getText();
+        String newPassword = newPasswordTextField.getText();
+        String confirmedNewPassword = confirmNewPasswordTextField.getText();
+
+        if(newPassword.equals(confirmedNewPassword)) {
+            ChangePasswordRequest changePasswordRequest = new ChangePasswordRequest(HashUtil.getMd5(oldPassword),HashUtil.getMd5(newPassword));
+            System.out.println("change password request sent");
+            Main.sendRequest((Request) changePasswordRequest);
+            ChangePasswordResponse changePasswordResponse = (ChangePasswordResponse) Main.getResponse();
+            assert changePasswordResponse != null;
+            if(changePasswordResponse.getResponse().equals("Successful")) {
+                JOptionPane.showMessageDialog(null,"Password changed successfully!");
+            }
+            else {
+                JOptionPane.showMessageDialog(null,"Some error occurred.");
+            }
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"New password fields don't match.");
+        }
+    }
+
+>>>>>>> b507368591bd4fddad2ca6a1ed705ab1edb7ecc4
 }

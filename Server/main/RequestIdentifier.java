@@ -89,6 +89,10 @@ public class RequestIdentifier implements Runnable{
                 DeleteRequestHandler deleteRequestHandler = new DeleteRequestHandler(Server.getConnection(), oos, (DeleteRequest)request);
                 deleteRequestHandler.sendResponse(userID);
             }
+            else if(request instanceof ChangePasswordRequest){
+                ChangePasswordRequestHandler changePasswordRequestHandler=new ChangePasswordRequestHandler(Server.getConnection(),oos,(ChangePasswordRequest)request);
+                changePasswordRequestHandler.sendResponse(userID);
+            }
             else{
                 System.out.println("No instance found");
                 try {
