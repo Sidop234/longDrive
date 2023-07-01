@@ -208,7 +208,6 @@ public class ProfileScreenController implements Initializable{
         filename.setText("");
         getFile();
     }
-<<<<<<< HEAD
     public void viewFile() throws IOException {
         if(filename.getText().isEmpty()){
             GuiUtil.alert(Alert.AlertType.ERROR, "No selected file!");
@@ -270,7 +269,6 @@ public class ProfileScreenController implements Initializable{
 
         }
     }
-=======
 
     @FXML
     private PasswordField oldPasswordTextField;
@@ -302,5 +300,4 @@ public class ProfileScreenController implements Initializable{
         }
     }
 
->>>>>>> b507368591bd4fddad2ca6a1ed705ab1edb7ecc4
 }
