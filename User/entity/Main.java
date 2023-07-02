@@ -33,7 +33,7 @@ public class Main extends Application {
         System.out.println("Login FXML Loaded!");
         try {
             System.out.println("Creating a new connection");
-            socket=new Socket("localhost",6970);
+            socket=new Socket("localhost",6971);
             System.out.println(socket);
             oos=new ObjectOutputStream(socket.getOutputStream());
             ois=new ObjectInputStream(socket.getInputStream());

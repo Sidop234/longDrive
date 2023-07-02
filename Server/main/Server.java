@@ -23,7 +23,7 @@ public class Server {
         Socket socket;
         try {
             // Creating Server Sockets, one for client requests and Chat.
-            serverSocket=new ServerSocket(6970);
+            serverSocket=new ServerSocket(6971);
             System.out.println("Server Socket Created!");
         } catch (IOException e) {
             e.printStackTrace();
@@ -36,16 +36,8 @@ public class Server {
                 socket=serverSocket.accept();
                 System.out.println("Server Socket Connected!");
                 //Starting a thread that listens for client requests and creates a chat socket connection.
-                Thread thread=new Thread(new RequestIdentifier(socket
-//                        , chatServerSocket
-                ));
+                Thread thread=new Thread(new RequestIdentifier(socket));
                 thread.start();
-
-                //Starting a thread that sends notifications to client dynamically
-
-                /***Notification feature***/
-//                Thread notification=new Thread(new SendNotification());
-//                notification.start();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -69,6 +61,8 @@ public class Server {
 
             connection= DriverManager.getConnection(url,"root","Siddh@nt234");
 //            connection= DriverManager.getConnection(url,"root","123");
+//            connection= DriverManager.getConnection(url,"root","XZMeE2M3v-Jno9P");
+
             System.out.println("Database connected!!");
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
@@ -99,17 +93,6 @@ public class Server {
     public static Object receiveRequest(ObjectInputStream inputStream) throws IOException, ClassNotFoundException {
         System.out.println("Request Received!");
         return inputStream.readObject();
-    }
-
-    /**
-     * Used to generate random strings
-     * @return Returns a String object
-     */
-    public static String getRandomString() {
-        if(randomString == null) {
-            randomString = new RandomString(8);
-        }
-        return randomString.nextString();
     }
 
 }
