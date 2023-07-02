@@ -177,9 +177,9 @@ public class ProfileScreenController implements Initializable {
             assert downloadResponse != null;
             fileArray = downloadResponse.getFiles().getFileArray();
             FileChooser fileChooser = new FileChooser();
-            if (downloadResponse.getFiles().getFiletype() == "txt") {
+            if (downloadResponse.getFiles().getFiletype().equals("txt")) {
                 fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("text files", "*.txt"));
-            } else if (downloadResponse.getFiles().getFiletype() == "pdf") {
+            } else if (downloadResponse.getFiles().getFiletype().equals("pdf")) {
                 fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("pdf files", "*.pdf"));
             } else {
                 fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("image files", "*.png", "*.jpg", "*.jpeg"));
